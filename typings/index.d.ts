@@ -1039,6 +1039,13 @@ declare module "noblox.js" {
         data: FriendRequestEntry[];
     }
 
+    interface NewFriendship {
+        UserId1: number;
+        UserId2: number;
+        UserId1IsActor: boolean;
+        SourceType: string;
+}
+
     interface FriendEntry {
         created: Date;
         id: number;
@@ -2469,7 +2476,7 @@ declare module "noblox.js" {
         on(event: 'connect', listener: () => void): this;
         on(event: 'close', listener: (err: any) => void): this;
         on(event: 'error', listener: (err: Error) => void): this;
-        on(event: 'data', listener: (message: FriendEntry) => void): this;
+        on(event: 'data', listener: (message: NewFriendship) => void): this;
     }
 
     interface OnMessageEventEmitter extends events.EventEmitter {
