@@ -1811,7 +1811,7 @@ declare module "noblox.js" {
     /**
      * 🔐 Accepts friend requests from `userId`.
      */
-    function acceptFriendRequest(userId: number, jar?: CookieJar): Promise<void>;
+    function acceptFriendRequest(userId: number, apiUrl?: string, jar?: CookieJar): Promise<void>;
 
     /**
      * 🔐 Declines all friend requests.
