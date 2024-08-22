@@ -25,7 +25,7 @@
   "author": "Suufi <suufi@mit.edu> (https://github.com/suufi)",
   "contributors": [
     "Joshua Lanese <froastj@gmail.com>",
-    "Neztore <hi@nezto.re>",
+    "Neztore <hi@nezto.re>"
   ],
   "homepage": "https://github.com/noblox/noblox.js",
   "devDependencies": {
