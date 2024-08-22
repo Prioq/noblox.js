@@ -20,6 +20,15 @@
     "clans"
   ],
   "dependencies": {
+    "@microsoft/signalr": "^8.0.7",
+    "chalk": "^5.3.0",
+    "cheerio": "^1.0.0-rc.10",
+    "entities": "^5.0.0",
+    "figlet": "^1.7.0",
+    "postman-request": "^2.88.1-postman.34"
+  },
+  "license": "MIT",
+  "bugs": {
     "url": "https://github.com/noblox/noblox.js/issues"
   },
   "author": "Suufi <suufi@mit.edu> (https://github.com/suufi)",
