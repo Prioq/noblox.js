@@ -2426,6 +2426,7 @@ declare module "noblox.js" {
         on(event: 'close', listener: (err: any) => void): this;
         on(event: 'error', listener: (err: Error) => void): this;
         on(event: 'data', listener: (message: NewFriendship) => void): this;
+        close(): void;
     }
 
     interface OnMessageEventEmitter extends events.EventEmitter {
