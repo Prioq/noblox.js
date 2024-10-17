@@ -1616,7 +1616,7 @@ declare module "noblox.js" {
     /**
      * 🔐 Get conversations for the logged in user.
      */
-    function getUserConversations(pageNumber?: number, pageSize?: number, jar?: CookieJar): Promise<ChatConversation[]>;
+    function getUserConversations(apiUrl?: string, pageNumber?: number, pageSize?: number, jar?: CookieJar): Promise<ChatConversation[]>;
 
     /**
      * 🔐 Mark a conversation as read.
@@ -1646,7 +1646,7 @@ declare module "noblox.js" {
     /**
      * 🔐 Sends a chat message to a conversation.
      */
-    function sendChatMessage(conversationId: number, message: string, jar?: CookieJar): Promise<SendChatResponse>;
+    function sendChatMessage(conversationId: number, message: string, apiUrl?: string, jar?: CookieJar): Promise<SendChatResponse>;
 
     /**
      * 🔐 Sets the typing status of the logged in user in a conversation.
