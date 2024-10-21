@@ -2541,12 +2541,12 @@ declare module "noblox.js" {
     /**
      * 🔐 Fires when new friend requests are received.
      */
-    function onFriendRequest(jar?: CookieJar, proxyUrl?: string): OnFriendRequestEventEmitter;
+    function onFriendRequest(proxyUrl?: string, jar?: CookieJar): OnFriendRequestEventEmitter;
 
     /**
      * 🔐 Fires when a new friendship is created.
      */
-    function onFriendshipCreated(jar?: CookieJar, proxyUrl?: string): OnFriendShipCreationEventEmitter;
+    function onFriendshipCreated(proxyUrl?: string, jar?: CookieJar): OnFriendShipCreationEventEmitter;
 
     /**
      * 🔐 Fires whenever a new message is received. Because it relies on `onNotification`, the logged in user's notification stream for messages must be enabled; however, it is one of the true events and does not rely on short polling.
