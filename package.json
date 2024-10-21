@@ -26,6 +26,7 @@
     "entities": "^5.0.0",
     "figlet": "^1.7.0",
     "http-proxy-agent": "^7.0.2",
+    "https-proxy-agent": "^7.0.5",
     "postman-request": "^2.88.1-postman.34"
   },
   "license": "MIT",
