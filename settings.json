@@ -5,13 +5,13 @@
   "session_only": true,
   "session_only_desc": "Minimizes data usage and speed up requests by only saving session cookies, disable if you need other cookies to be saved as well.",
 
-  "timeout": 10000,
+  "timeout": 120000,
   "timeout_desc": "Timeout for http requests. This is necessary for functions that make a very large number of requests, where it is possible some simply won't connect.",
 
   "event": {
     "maxRetries": 5,
     "maxRetries_desc": "Maximum number of consecutive retries after an event times out or fails in some other way.",
-    "timeout": 10000,
+    "timeout": 120000,
     "timeout_desc": "Maximum time (in milliseconds) a request can take. If your server has extremely high latency you may have to raise this.",
     "event_desc": "Below is the poll time (in milliseconds) for each of the event functions. A lower number will detect changes much quicker but will stress the network, a higher one does the opposite.",
     "defaultDelay": 10000,
