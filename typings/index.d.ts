@@ -29,6 +29,8 @@ declare module "noblox.js" {
         /** Timeout for http requests. This is necessary for functions that make a very large number of requests, where it is possible some simply won't connect. (Default: 10000) */
         timeout: number;
 
+        proxyDomain: string | null,
+
         event: {
             /** Maximum number of consecutive retries after an event times out or fails in some other way. (Default: 5) */
             maxRetries: number;
@@ -50,6 +52,8 @@ declare module "noblox.js" {
             onBlurbChange: number;
             /** The poll time in milliseconds to check for new transaction log entries. A lower number will detect changes much quicker but will stress the network, a higher one does the opposite. This endpoint has a low rate limit. (Default: 30000) */
             onGroupTransaction: number;
+            /** The proxy url for the userhub signalR connection */
+            onNotificationProxyUrl: string | null;
         }
 
         thumbnail: {
