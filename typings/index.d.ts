@@ -31,14 +31,16 @@ declare module "noblox.js" {
 
         proxyDomain: string | null,
 
-        /** Configuration for rblxprxy.bloxboom.com proxy service */
-        rblxprxy: {
-            /** Enable routing requests through rblxprxy.bloxboom.com proxy service */
+        /** Configuration for external proxy service */
+        proxy: {
+            /** Enable routing requests through external proxy service */
             enabled: boolean;
-            /** Your rblxprxy authentication key */
+            /** Your proxy service authentication key */
             key: string;
             /** Optional country code for IP routing (e.g., 'us', 'uk', 'ca') */
             country?: string;
+            /** Proxy service base URL (required when enabled) */
+            url: string;
             /** List of Roblox domains that should be proxied when enabled */
             domains: string[];
             /** Fallback to direct requests if proxy fails */
@@ -2392,6 +2394,7 @@ declare module "noblox.js" {
         enabled: boolean;
         key: string;
         country?: string;
+        url?: string;
         domains?: string[];
         fallback?: boolean;
     }
@@ -2419,6 +2422,7 @@ declare module "noblox.js" {
         proxy: {
             enabled: boolean;
             key: string;
+            url: string;
             country: string;
             domains: string[];
             fallback: boolean;

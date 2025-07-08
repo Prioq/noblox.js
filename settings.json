@@ -3,13 +3,15 @@
   "show_deprecation_warnings_desc": "Prints console warnings for functions that are being polyfilled by newer methods due to upstream Roblox API changes",
   "proxyDomain": "",
 
-  "rblxprxy": {
+  "proxy": {
     "enabled": false,
-    "enabled_desc": "Enable routing requests through rblxprxy.bloxboom.com proxy service",
+    "enabled_desc": "Enable routing requests through external proxy service",
     "key": "",
-    "key_desc": "Your rblxprxy authentication key",
+    "key_desc": "Your proxy service authentication key",
     "country": "",
     "country_desc": "Optional country code for IP routing (e.g., 'us', 'uk', 'ca')",
+    "url": "",
+    "url_desc": "Proxy service base URL (required when enabled)",
     "domains": [
       "accountinformation.roblox.com",
       "accountsettings.roblox.com",
