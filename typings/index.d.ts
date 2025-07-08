@@ -31,6 +31,20 @@ declare module "noblox.js" {
 
         proxyDomain: string | null,
 
+        /** Configuration for rblxprxy.bloxboom.com proxy service */
+        rblxprxy: {
+            /** Enable routing requests through rblxprxy.bloxboom.com proxy service */
+            enabled: boolean;
+            /** Your rblxprxy authentication key */
+            key: string;
+            /** Optional country code for IP routing (e.g., 'us', 'uk', 'ca') */
+            country?: string;
+            /** List of Roblox domains that should be proxied when enabled */
+            domains: string[];
+            /** Fallback to direct requests if proxy fails */
+            fallback: boolean;
+        },
+
         event: {
             /** Maximum number of consecutive retries after an event times out or fails in some other way. (Default: 5) */
             maxRetries: number;
@@ -2373,6 +2387,64 @@ declare module "noblox.js" {
      * @see https://github.com/noblox/noblox.js/blob/master/settings.json
      */
     function setOptions(newOptions: Partial<NobloxOptions>): void
+
+    interface ProxyConfiguration {
+        enabled: boolean;
+        key: string;
+        country?: string;
+        domains?: string[];
+        fallback?: boolean;
+    }
+
+    interface ConfigurationOptions {
+        proxy?: ProxyConfiguration;
+        [key: string]: any;
+    }
+
+    interface ConfigurationResult {
+        success: boolean;
+        warnings: string[];
+        errors: string[];
+    }
+
+    interface ProxyTestResult {
+        success: boolean;
+        message: string;
+        responseTime?: number;
+        statusCode?: number;
+        error?: string;
+    }
+
+    interface CurrentConfiguration {
+        proxy: {
+            enabled: boolean;
+            key: string;
+            country: string;
+            domains: string[];
+            fallback: boolean;
+        };
+    }
+
+    /**
+     * ✅ Configure noblox.js with advanced options including proxy settings.
+     * This is an enhanced version of setOptions that provides additional validation
+     * and configuration capabilities, particularly for proxy settings.
+     * @param options - Configuration options including proxy settings
+     * @returns Configuration result with validation info
+     */
+    function configure(options: ConfigurationOptions): ConfigurationResult
+
+    /**
+     * ✅ Get current configuration including proxy settings
+     * @returns Current configuration
+     */
+    function getConfiguration(): CurrentConfiguration
+
+    /**
+     * ✅ Test proxy configuration by making a test request
+     * @returns Test result
+     */
+    function testProxyConfiguration(): Promise<ProxyTestResult>
 
     // Events
 
