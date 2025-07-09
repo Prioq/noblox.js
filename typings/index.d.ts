@@ -1465,6 +1465,12 @@ declare module "noblox.js" {
     function block(userId: number, apiUrl?: string, jar?: CookieJar): Promise<void>;
 
     /**
+     * 🔐 Kicks a user by temporarily blocking and then immediately unblocking them.
+     * This effectively removes the user from the current session without permanently blocking them.
+     */
+    function kickPlayer(userId: number, apiUrl?: string, jar?: CookieJar): Promise<void>;
+
+    /**
      * 🔐 Unblocks the user with `userId`.
      */
     function unblock(userId: number, apiUrl?: string, jar?: CookieJar): Promise<void>;
