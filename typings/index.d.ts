@@ -2456,6 +2456,20 @@ declare module "noblox.js" {
      */
     function testProxyConfiguration(): Promise<ProxyTestResult>
 
+    /**
+     * ✅ Set logging for kickPlayer
+     * @param enabled - Whether to enable logging for kickPlayer
+     */
+    function setKickPlayerLogging(enabled: boolean): void
+
+    /**
+     * ✅ Set log level
+     * @param level - The log level to set for kickPlayer
+     */
+    function setLogLevel(level: 'DEBUG' | 'INFO' | 'WARN' | 'ERROR'): void
+
+
+
     // Events
 
     /// Asset
