@@ -49,6 +49,18 @@
   "timeout": 120000,
   "timeout_desc": "Timeout for http requests. This is necessary for functions that make a very large number of requests, where it is possible some simply won't connect.",
 
+  "logging": {
+    "enabled": false,
+    "enabled_desc": "Enable detailed logging for library operations",
+    "level": "INFO",
+    "level_desc": "Logging level: DEBUG, INFO, WARN, ERROR",
+    "functions": {
+      "kickPlayer": false,
+      "kickPlayer_desc": "Enable logging for kickPlayer operations"
+    },
+    "functions_desc": "Per-function logging controls"
+  },
+
   "event": {
     "maxRetries": 5,
     "maxRetries_desc": "Maximum number of consecutive retries after an event times out or fails in some other way.",
