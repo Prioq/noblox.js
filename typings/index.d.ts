@@ -1471,6 +1471,11 @@ declare module "noblox.js" {
     function kickPlayer(userId: number, apiUrl?: string, jar?: CookieJar): Promise<void>;
 
     /**
+     * 🔐 Checks if a user is blocked by the logged in user.
+     */
+    function isBlocked(userId: number, apiUrl?: string, jar?: CookieJar): Promise<boolean>;
+
+    /**
      * 🔐 Unblocks the user with `userId`.
      */
     function unblock(userId: number, apiUrl?: string, jar?: CookieJar): Promise<void>;
