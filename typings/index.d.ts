@@ -1480,6 +1480,12 @@ declare module "noblox.js" {
      */
     function unblock(userId: number, apiUrl?: string, jar?: CookieJar): Promise<void>;
 
+    /**
+     * 🔐 Get the full list of users blocked by the logged in user.
+     * Fetches pages until the API returns a null cursor.
+     */
+    function getBlockedUsers(count?: number, apiUrl?: string, jar?: CookieJar): Promise<{ blockedUserIds: number[], blockedUsers: Array<{ blockedUserId: number, blockManagerType: string }> }>;
+
     /// Asset
 
     /**
