@@ -55,8 +55,7 @@
     "level": "INFO",
     "level_desc": "Logging level: DEBUG, INFO, WARN, ERROR",
     "functions": {
-      "kickPlayer": false,
-      "kickPlayer_desc": "Enable logging for kickPlayer operations"
+
     },
     "functions_desc": "Per-function logging controls"
   },

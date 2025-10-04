@@ -1465,12 +1465,6 @@ declare module "noblox.js" {
     function block(userId: number, apiUrl?: string, jar?: CookieJar): Promise<void>;
 
     /**
-     * 🔐 Kicks a user by temporarily blocking and then immediately unblocking them.
-     * This effectively removes the user from the current session without permanently blocking them.
-     */
-    function kickPlayer(userId: number, apiUrl?: string, jar?: CookieJar): Promise<void>;
-
-    /**
      * 🔐 Checks if a user is blocked by the logged in user.
      */
     function isBlocked(userId: number, apiUrl?: string, jar?: CookieJar): Promise<boolean>;
@@ -2466,18 +2460,6 @@ declare module "noblox.js" {
      * @returns Test result
      */
     function testProxyConfiguration(): Promise<ProxyTestResult>
-
-    /**
-     * ✅ Set logging for kickPlayer
-     * @param enabled - Whether to enable logging for kickPlayer
-     */
-    function setKickPlayerLogging(enabled: boolean): void
-
-    /**
-     * ✅ Set log level
-     * @param level - The log level to set for kickPlayer
-     */
-    function setLogLevel(level: 'DEBUG' | 'INFO' | 'WARN' | 'ERROR'): void
 
 
 
