@@ -124,6 +124,86 @@ In the event of accidentally exposing your `.ROBLOSECURITY` cookie, do not panic
 
 ---
 
+## Proxy Configuration
+
+`noblox.js` supports routing requests through external proxy services. This is useful for avoiding rate limits, IP bans, or when you need requests to originate from specific geographic locations.
+
+### Global Proxy Configuration
+
+Configure proxy settings globally via environment variables or the `configure()` method:
+
+**Using Environment Variables:**
+```bash
+export PROXY_ENABLED=true
+export PROXY_KEY=your-proxy-api-key
+export PROXY_URL=https://your-proxy-service.com/api
+export PROXY_COUNTRY=us  # Optional: 2-letter country code
+export PROXY_FALLBACK=true  # Optional: fallback to direct on proxy failure
+```
+
+**Using `configure()` method:**
+```js
+const noblox = require('noblox.js')
+
+noblox.configure({
+  proxy: {
+    enabled: true,
+    key: 'your-proxy-api-key',
+    url: 'https://your-proxy-service.com/api',
+    country: 'us',  // Optional
+    fallback: true  // Optional: defaults to true
+  }
+})
+```
+
+### Per-Request Proxy Control
+
+You can override proxy settings for specific requests:
+
+**Disable proxy for a specific request:**
+```js
+// Some endpoints may work better without proxy
+const user = await noblox.getUser({
+  userId: 123,
+  jar: cookieJar,
+  proxy: { enabled: false }  // Skip proxy for this request
+})
+```
+
+**Use different proxy settings for a request:**
+```js
+// Use different proxy key or country for specific requests
+const group = await noblox.getGroup({
+  groupId: 456,
+  jar: cookieJar,
+  proxy: {
+    key: 'premium-proxy-key',
+    country: 'uk',
+    fallback: false  // Fail immediately if proxy fails
+  }
+})
+```
+
+**Note:** Per-request proxy control is an advanced feature. Most users should configure proxy globally and let all requests use the same settings.
+
+### Proxy Fallback
+
+When `fallback` is enabled (default), if a proxy request fails, `noblox.js` will automatically retry the request directly to Roblox servers. This provides resilience against proxy service outages.
+
+To disable fallback globally:
+```js
+noblox.configure({
+  proxy: {
+    enabled: true,
+    key: 'your-key',
+    url: 'your-url',
+    fallback: false  // Fail immediately if proxy fails
+  }
+})
+```
+
+---
+
 ## Common Issues
 
 > **Error: You are not logged in.**
